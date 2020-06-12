@@ -1,0 +1,310 @@
+[colors]
+;background = #aa000000
+;background-alt = #aa000000
+;foreground = ${xrdb:color7:#222}
+;foreground-alt = #555
+;primary = ${xrdb:color15:fdf6e3}
+;secondary = #e60053
+;alert = #bd2c40
+
+panel	   	= #aa000000
+background 	= #aabfbaac
+background_alt	= #aad70a53
+text		= #fdf6e3
+text_alt	= #d70a53
+line		= #fdf6e3
+line_alt	= #d70a53
+
+[bar/mybar]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 22
+fixed-center = false
+
+font-0 = "Fira Sans Book : size=10;1"
+font-1 = "Fira Sans Book : size=10;1"
+font-2 = "Icomoon : size=10;1"
+
+
+background = #aa000000
+foreground = ${colors.text}
+
+line-size = 1
+line-color = #f00
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+modules-left = i3 xwindow
+modules-center = 
+modules-right = mpd indicator wlan wlan_2 eth eth2  memory cpu temperature battery0 battery1 xkeyboard xbacklight pulseaudio date 
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = i3
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = <label-layout>
+
+label-layout = %layout%
+label-layout-underline = ${colors.line}
+
+[module/indicator]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format = <label-indicator>
+
+label-indicator-padding = 0
+label-indicator-margin = 1
+label-indicator-background = ${colors.panel}
+label-indicator-underline = ${colors.line_alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+label-mode-padding = 2
+label-mode-underline = ${colors.line_alt}
+
+ws-icon-0  = 1;
+ws-icon-1  = 2;
+ws-icon-2  = 3;
+ws-icon-3  = 4;
+ws-icon-4  = 5;5
+ws-icon-5  = 6;6
+ws-icon-6  = 7;7
+ws-icon-7  = 8;8
+ws-icon-8  = 9;9
+ws-icon-9  = 10;10
+ws-icon-10 = 11;
+
+; focused = Active workspace on focused monitor
+label-focus-font = 3
+label-focused = %icon%
+label-focused-background = ${colors.panel}
+label-focused-underline= ${colors.line}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused-font = 3
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible-font = 3
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent-font = 3
+label-urgent = %icon%
+label-urgent-underline = ${colors.line_alt}
+label-urgent-padding = 2
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song> 
+format-online-underline = ${colors.line}
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/xbacklight]
+type = internal/xbacklight
+enable-scroll = true
+
+format = <label>
+label = %{T3} %{T-}%percentage%%
+label-underline = ${colors.line}
+
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 5
+format = <label>
+label = %{T3} %{T-}%percentage%%
+format-underline = ${colors.line}
+
+[module/memory]
+type = internal/memory
+interval = 5
+format = <label>
+label = %{T3} %{T-}%gb_used%
+format-underline = ${colors.line}
+format-underline-fill = ${colors.line_alt}
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.line}
+label-connected = %{T3} %essid% [%ifname%] [%signal%%] 
+
+format-packetloss = <label-connected>
+format-packetloss-underline = ${colors.line-alt}
+
+[module/wlan_2]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.line}
+label-connected = %local_ip% [↑%upspeed% ↓%downspeed%] 
+
+format-packetloss = <label-connected>
+format-packetloss-underline = ${colors.line-alt}
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.line}
+label-connected = %local_ip% [%ifname%]
+
+format-packetloss = <label-connected>
+format-packetloss-underline = ${colors.line-alt}
+
+[module/eth2]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-underline = ${colors.line}
+label-connected = [↑%upspeed% ↓%downspeed%]
+
+format-packetloss = <label-connected>
+format-packetloss-underline = ${colors.line-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = " %d-%m-%Y"
+
+time = %H:%M
+
+format-underline = ${colors.line}
+
+label = %{T3}%{T-}%date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${colors.text}
+
+ramp-volume-0 = %{T3}
+ramp-volume-1 = %{T3}
+ramp-volume-2 = %{T3}
+
+format-muted = <label-muted>
+label-muted = 🔇 %{T3} %{T-}%percentage%%
+label-muted-foreground = ${colors.text}
+label-muted-underline = ${colors.line_alt}
+
+format-volume-underline = ${colors.line}
+format-muted-underline = ${colors.line}
+
+[module/battery0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 95
+
+format-charging = <label-charging>
+format-charging-underline = ${colors.line}
+label-charging = %{T3} %{T-}%percentage%% [%consumption%W]
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %{T3} %{T-}%percentage%% [%consumption%W] 
+format-discharging-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-underline-0 =  ${colors.line_alt}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 =
+ramp-capacity-4 =  
+
+[module/battery1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 95
+
+format-charging = <label-charging>
+format-charging-underline = ${colors.line}
+label-charging = %{T3} %{T-}%percentage%% [%consumption%W] [%time%]
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %{T3} %{T-}%percentage%% [%consumption%W]  [%time%]
+format-discharging-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-0-underline =  ${colors.line_alt}
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 =
+ramp-capacity-4 =  
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 65
+
+format = <label>
+format-underline = ${colors.line}
+
+format-warn = <label-warn>
+format-warn-underline = ${colors.line_alt}
+
+label = %{T3}%{T-}%temperature-c%
+label-warn= %{T3} %{T-}%temperature-c%
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
