@@ -1,0 +1,74 @@
+!! xrdb ~./Xresources per aggiornare
+
+!! Colorscheme
+
+! special
+*.foreground:   #8baaaa
+*.background:   #242b30
+*.cursorColor:  #8baaaa
+
+! black
+*.color0:       #242e34
+*.color8:       #1b282f
+
+! red
+*.color1:       #bb5858
+*.color9:       #d70a53
+
+! green
+*.color2:       #819400
+*.color10:      #a4bd00
+
+! yellow
+*.color3:       #b08500
+*.color11:      #d9a400
+
+! blue
+*.color4:       #2587cc
+*.color12:      #2ca2f5
+
+! magenta
+*.color5:       #696ebf
+*.color13:      #8086e8
+
+! cyan
+*.color6:       #289c93
+*.color14:      #33c5ba
+
+! white
+*.color7:       #bfbaac
+*.color15:      #fdf6e3
+
+
+!! URxvt Appearance
+URxvt.font: xft:Iosevka:style=Regular:size=8
+URxvt.boldFont: xft:Iosevka:style=Bold:size=8
+URxvt.italicFont: xft:Iosevka:style=Italic:size=8
+URxvt.boldItalicfont: xft:Iosevka:style=Bold Italic:size=8
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 5
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 32
+URxvt.iso14755: false
+URxvt.transparent: true
+URxvt.shading: 40
+
+urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
+!! Common Keybinds for Navigations
+!! shift+up go up
+!! shift+down go down
+!! ctrl+left go prev word
+!! ctrl+right go next word
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
