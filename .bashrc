@@ -112,5 +112,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# thanks to https://www.atlassian.com/git/tutorials/dotfiles
 alias config=/usr/bin/git --git-dir=$HOME/.mycfg/ --work-tree=$HOME
