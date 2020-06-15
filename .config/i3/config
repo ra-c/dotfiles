@@ -18,6 +18,9 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+alt to drag floating windows to their wanted position
 floating_modifier $alt
 
+# startup
+exec_always unclutter --timeout 8 --ignore-scrolling --jitter 5
+
 # start a terminal
 bindsym $super+Return exec urxvt
 
