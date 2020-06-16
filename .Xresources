@@ -43,7 +43,27 @@
 
 !! st
 st.alpha: 0.65
-st.background: #000000
+st.termname: st-256color
+st.cursorColor: #8baaaa
+st.rcursorColor: white
+!st.shell:
+st.minlatency: 8
+st.maxlatency: 33
+st.blinktimeout: 800
+st.bellvolume: 50
+st.tabspaces: 8
+st.borderpx: 5
+st.cwscale: 1.0
+st.chscale: 1.0
+st.dclicktimeout: 300
+st.tclicktimeout: 600
+st.cursorthickness: 2
+st.cursorstyle: 3
+st.columns: 80
+st.rows: 24
+st.mousefg: 7
+st.mousebg: 0
+st.fallbackfontcolor: 11
 
 !! URxvt Appearance
 URxvt.font: xft:Iosevka:style=Regular:size=8, xft:NotoColorEmoji:style=Regular:size=8
