@@ -64,6 +64,9 @@ st.rows: 24
 st.mousefg: 7
 st.mousebg: 0
 st.fallbackfontcolor: 11
+st.selectionbg: #8baaaa
+st.selectionfg: #ffffff
+st.ignoreselfg: 1
 
 !! URxvt Appearance
 URxvt.font: xft:Iosevka:style=Regular:size=8, xft:NotoColorEmoji:style=Regular:size=8
