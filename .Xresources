@@ -4,7 +4,7 @@
 
 ! special
 *.foreground:   #8baaaa
-*.background:   #242b30
+*.background:   #000000
 *.cursorColor:  #8baaaa
 
 ! black
@@ -39,9 +39,14 @@
 *.color7:       #bfbaac
 *.color15:      #fdf6e3
 
+!! Global
+
+!! st
+st.alpha: 0.65
+st.background: #000000
 
 !! URxvt Appearance
-URxvt.font: xft:Iosevka:style=Regular:size=8
+URxvt.font: xft:Iosevka:style=Regular:size=8, xft:NotoColorEmoji:style=Regular:size=8
 URxvt.boldFont: xft:Iosevka:style=Bold:size=8
 URxvt.italicFont: xft:Iosevka:style=Italic:size=8
 URxvt.boldItalicfont: xft:Iosevka:style=Bold Italic:size=8
@@ -55,10 +60,13 @@ URxvt.saveline: 2048
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.urgentOnBell: true
-URxvt.depth: 32
 URxvt.iso14755: false
-URxvt.transparent: true
-URxvt.shading: 40
+!! Fake transparency
+!!URxvt.transparent: true
+!!URxvt.shading: 40
+!! Real transparency
+URxvt.depth:32
+URxvt.background: [65]#000000
 
 urxvt.perl-ext-common: default,tabbed,matcher,resize-font,-tabbed
 !! Common Keybinds for Navigations
