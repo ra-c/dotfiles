@@ -1,10 +1,15 @@
 colo miramare
 set background=dark
 set nocompatible
+filetype indent plugin on
 set exrc
+set hidden
+set wildmenu
+set showcmd
+set hlsearch
 set secure
 set backspace=indent,eol,start "enable backspace
-set guifont=Iosevka_Term_Medium_Extended:h12:cANSI:qDRAFT
+set guifont=Iosevka:h12
 set go-=T "remove toolbar
 set go-=m
 set go-=r
@@ -12,7 +17,7 @@ set go-=L
 let g:netrw_banner=0
 set enc=utf-8
 set fenc=utf-8
-set spell spelllang=en_us,it
+set spelllang=en_us,it
 set nocompatible
 syntax on
 set number
@@ -23,11 +28,15 @@ set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 "tabs
 set autoindent
+set ignorecase
+set smartcase
+set mouse=a
 set smartindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+
 
 call plug#begin('~/.vim/plugged')
 

@@ -50,7 +50,7 @@ st.rcursorColor: white
 st.minlatency: 8
 st.maxlatency: 33
 st.blinktimeout: 800
-st.bellvolume: 50
+st.bellvolume: 100
 st.tabspaces: 8
 st.borderpx: 5
 st.cwscale: 1.0

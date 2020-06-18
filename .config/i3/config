@@ -19,11 +19,11 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $alt
 
 # startup
-exec unclutter --timeout 8 --ignore-scrolling --jitter 5
-exec_always picom
+#exec_always unclutter --timeout 8 --ignore-scrolling --jitter 5
+exec_always picom -b
 
 # start a terminal
-bindsym $super+Return exec urxvt
+bindsym $super+Return exec st
 
 # kill focused window
 bindsym $super+q kill
