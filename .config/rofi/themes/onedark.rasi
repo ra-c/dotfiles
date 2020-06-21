@@ -26,7 +26,7 @@
   spacing: 0;
   background-color: transparent;
 
-  font: "DejaVu Sans 11";
+  font: "Fira Sans Book 11";
   text-color: @text;
 }
 
@@ -36,7 +36,7 @@ window {
   border-radius: 8px;
   transparency: "real";
   fullscreen: false;
-  background-color: #282c34ee;
+  background-color: #000000aa;
   width: 35%;
 }
 
