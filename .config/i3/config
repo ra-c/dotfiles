@@ -30,9 +30,9 @@ bindsym $super+q kill
 bindsym $alt+F4 kill
 
 #rofi
-bindsym $super+space exec rofi -show run -lines 7 -eh 1 -bw 0 -location 0
-bindsym $super+w     exec rofi -show window -lines 7 -eh 1 -bw 0 -location 0 -window-format "Desktop {w}: {t}"
-
+bindsym $super+space exec rofi -show run
+bindsym $super+w     exec rofi -show window -width 25
+bindsym $super+e     exec rofi -show "powermenu:.config/rofi/scripts/rofi-power-menu --no-symbols --choices logout/suspend/hibernate/reboot/shutdown" -width 10
 
 # move focus
 bindsym $super+Left focus left
@@ -136,8 +136,6 @@ bindsym $super+Shift+XF86AudioMute move container to workspace $ws11
 bindsym $super+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $super+Shift+e exec "i3-nagbar -t warning -m 'Uscire?' -B 'Sì.' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
