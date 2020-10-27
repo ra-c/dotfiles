@@ -171,4 +171,5 @@ client.urgent			#df343f #df343f #d8dee8 #df343f #df343f
 client.placeholder		#df343f #df343f #d8dee8 #df343f #df343f
 client.background		#df343f
 
-
+exec nextcloud
+exec flatpak run com.dropbox.Client
