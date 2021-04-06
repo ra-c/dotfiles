@@ -1,3 +1,9 @@
+#PATH (modificato per os-dev)
+export PREFIX="$HOME/.local/opt/cross"
+export GOPATH=$HOME/work
+export PATH="$PATH:$PREFIX/bin:/usr/local/go/bin:$GOPATH/bin"
+export TARGET=i686-elf
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
