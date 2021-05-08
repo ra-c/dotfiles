@@ -157,12 +157,14 @@ exec feh --bg-fill /home/antonio/Immagini/.wallpaper.png
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #i3-gaps features
-gaps inner 5
-gaps outer 3
-smart_borders on
+gaps inner 1
+#gaps inner 5
+#gaps outer 3
+#smart_borders on
 
 #window rules (xprop to find class)
-for_window [class=".*"] border pixel 2
+#for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 
 #colors				border  backgr. text    indcatr c_borde
 client.focused			#bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -173,3 +175,7 @@ client.background		#df343f
 
 exec nextcloud
 exec flatpak run com.dropbox.Client
+
+# Script super stupido per screen
+
+bindsym --release $super+Print exec /home/antonio/.local/bin/scrot_script.sh
